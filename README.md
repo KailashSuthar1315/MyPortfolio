@@ -2,12 +2,6 @@
 
 A modern and responsive personal portfolio website built using HTML, Tailwind CSS, and JavaScript to showcase my projects, technical skills, certifications, and professional journey as an aspiring Data Analyst.
 
----
-
-## 🚀 Live Portfolio
-
-🔗 Portfolio Website: 
-https://kailashsuthar1315.github.io/MyPortfolio/
 
 ---
 
@@ -51,11 +45,6 @@ Business intelligence dashboard for workforce analysis and employee performance 
 ### 🩺 MediGPT
 AI-powered medical assistant chatbot built using Spring Boot and Ollama LLM integration.
 
----
-
-## 📷 Preview
-
-<img width="100%" alt="Portfolio Preview" src="profile.jpeg">
 
 ---
 
