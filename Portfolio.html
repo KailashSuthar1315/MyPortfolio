@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kailash Suthar | Data Analyst Portfolio</title>
+    <meta name="description" content="Portfolio of Kailash Suthar - Aspiring Data Analyst specializing in Python, SQL, Tableau, and Power BI.">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+        }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 0, 79, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(255, 0, 79, 0.15);
+        }
+        .text-accent { color: #ff004f; }
+        .bg-accent { background-color: #ff004f; }
+        .border-accent { border-color: #ff004f; }
+        
+        /* Custom typing utility */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Floating animation for profile picture */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-200 antialiased selection:bg-rose-500 selection:text-white">
+
+    <div id="preloader" class="fixed inset-0 z-50 flex items-center justify-center bg-[#0f172a] transition-opacity duration-500">
+        <div class="h-12 w-12 animate-spin rounded-full border-4 border-slate-700 border-t-[#ff004f]"></div>
+    </div>
+
+    <button id="scrollTopBtn" class="fixed bottom-6 right-6 z-40 hidden rounded-full bg-slate-800/80 p-3 text-slate-200 backdrop-blur-md border border-slate-700 hover:border-[#ff004f] hover:text-[#ff004f] transition-all duration-300">
+        <i class="fa-solid fa-arrow-up text-lg"></i>
+    </button>
+
+    <header class="glass-nav fixed top-0 left-0 w-full z-40">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-wider text-white">KAILASH<span class="text-accent">.</span></a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">About</a>
+                    <a href="#skills" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">Skills</a>
+                    <a href="#projects" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">Projects</a>
+                    <a href="#experience" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">Journey</a>
+                    <a href="#contact" class="nav-link text-sm font-medium text-slate-300 hover:text-white transition-colors relative pb-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-accent after:transition-all after:duration-300">Contact</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#contact" class="inline-flex items-center justify-center rounded-md border border-accent bg-transparent px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-accent transition-colors duration-300">Hire Me</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobileMenuBtn" class="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-800 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden border-b border-slate-800 bg-[#0f172a]/95 backdrop-blur-lg px-4 pt-2 pb-4 space-y-1">
+            <a href="#home" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Home</a>
+            <a href="#about" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">About</a>
+            <a href="#skills" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Skills</a>
+            <a href="#projects" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Projects</a>
+            <a href="#experience" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Journey</a>
+            <a href="#contact" class="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white">Contact</a>
+        </div>
+    </header>
+
+    <section id="home" class="relative flex min-h-screen items-center justify-center pt-16 overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,rgba(255,0,79,0.08),transparent_45%)]"></div>
+        <div class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.05),transparent_40%)]"></div>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full py-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+            
+            <div class="md:col-span-7 space-y-6 text-center md:text-left order-2 md:order-1">
+                <span class="inline-flex items-center rounded-full bg-rose-500/10 px-3 py-1 text-xs font-medium text-rose-400 ring-1 ring-inset ring-rose-500/20">Available for Opportunities</span>
+                <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-[#ff004f]">Kailash Suthar</span>
+                </h1>
+                <h2 class="text-xl font-medium sm:text-2xl text-slate-400">
+                    <span id="typing-text" class="typing-cursor text-white font-semibold"></span>
+                </h2>
+                <p class="max-w-2xl text-base sm:text-lg text-slate-400 leading-relaxed mx-auto md:mx-0">
+                    I am a BCA student passionate about Data Analytics, Data Visualization, and solving real-world business problems using data. Skilled in Python, SQL, Excel, Pandas, NumPy, and Tableau.
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+                    <a href="https://github.com/KailashSuthar1315?tab=repositories" target="_blank" class="inline-flex items-center justify-center rounded-md bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#d90043] transition-colors duration-300">View Projects</a>
+                    <a href="ResumeKailash.pdf" download="ResumeKailash.pdf" class="inline-flex items-center justify-center rounded-md border border-slate-700 bg-slate-800/50 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors duration-300"><i class="fa-solid fa-download mr-2"></i> Download Resume</a>
+                </div>
+                <div class="flex justify-center md:justify-start space-x-6 pt-4 text-xl text-slate-400">
+                    <a href="https://github.com/KailashSuthar1315" target="_blank" class="hover:text-white transition-colors" ><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/kailash-suthar-40aa752a4/" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/kailashsharma_15/?hl=en" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="md:col-span-5 flex justify-center order-1 md:order-2">
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 animate-float">
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-[#ff004f] to-cyan-400 opacity-20 blur-2xl"></div>
+                    <div class="relative w-full h-full rounded-full border-2 border-slate-700/50 p-3 bg-slate-900/40 backdrop-blur-sm">
+                        <div class="w-full h-full rounded-full bg-slate-800 overflow-hidden flex items-center justify-center border border-slate-700">
+                            <img src="profile.jpeg" alt="Kailash Suthar" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="border-y border-slate-800 bg-slate-900/20 backdrop-blur-sm py-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-target="10">0</div>
+                    <p class="text-xs sm:text-sm font-medium uppercase tracking-widest text-slate-500 mt-1">Projects Completed</p>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-target="5">0</div>
+                    <p class="text-xs sm:text-sm font-medium uppercase tracking-widest text-slate-500 mt-1">Data Tools Mastered</p>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-target="1">0</div>
+                    <p class="text-xs sm:text-sm font-medium uppercase tracking-widest text-slate-500 mt-1">Internship Completed</p>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-bold text-white tracking-tight" data-target="1">0</div>
+                    <p class="text-xs sm:text-sm font-medium uppercase tracking-widest text-slate-500 mt-1">Certifications</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-semibold uppercase tracking-widest text-accent">About Me</h2>
+                <p class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-2">Transforming raw records into strategic insight</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                    <h3 class="text-xl font-semibold text-white">Professional Biography</h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        I have completed my Bachelor of Computer Applications (BCA), building a strong foundation in programming, data analysis, and problem-solving. My objective is to leverage Data Analytics and Business Intelligence to transform raw data into meaningful insights that support strategic decision-making and business growth.
+
+                    </p>
+                    <div class="border-t border-slate-800 pt-6">
+                        <h4 class="text-sm font-semibold text-accent uppercase tracking-wider mb-2">Career Goal</h4>
+                        <p class="text-slate-300 italic">"Seeking opportunities in Data Analytics and Business Intelligence."</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div class="p-3 bg-rose-500/10 rounded-xl text-accent"><i class="fa-solid fa-graduation-cap text-2xl"></i></div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Education</h4>
+                            <p class="text-sm text-slate-300 mt-1">Bachelor of Computer Applications (BCA)</p>
+                            <p class="text-xs text-slate-500 mt-0.5">2023 — 2026</p>
+                            <div class="inline-flex items-center rounded-md bg-slate-800 px-2.5 py-0.5 text-xs font-medium text-slate-300 mt-2">CGPA: 8.67</div>
+                        </div>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 flex gap-4 items-start">
+                        <div class="p-3 bg-cyan-500/10 rounded-xl text-cyan-400"><i class="fa-solid fa-location-dot text-2xl"></i></div>
+                        <div>
+                            <h4 class="text-lg font-semibold text-white">Location Details</h4>
+                            <p class="text-sm text-slate-300 mt-1">Rajasthan, India</p>
+                            <p class="text-xs text-slate-500 mt-0.5">Open to physical relocation and remote engagement options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-slate-900/10 relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-semibold uppercase tracking-widest text-accent">Competencies</h2>
+                <p class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-2">Technical Toolstack & Frameworks</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-brands fa-python text-2xl text-blue-400"></i>
+                            <h3 class="font-medium text-white">Python</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-blue-400 to-cyan-400 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-database text-2xl text-emerald-400"></i>
+                            <h3 class="font-medium text-white">SQL</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">90%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-emerald-400 to-teal-400 h-1.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-chart-column text-2xl text-orange-400"></i>
+                            <h3 class="font-medium text-white">Tableau</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">80%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-400 to-amber-400 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-chart-pie text-2xl text-yellow-500"></i>
+                            <h3 class="font-medium text-white">Power BI</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">75%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-500 to-amber-500 h-1.5 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-table text-2xl text-green-500"></i>
+                            <h3 class="font-medium text-white">Excel</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-green-500 to-emerald-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-solid fa-gears text-2xl text-purple-400"></i>
+                            <h3 class="font-medium text-white">Pandas & NumPy</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">80%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-purple-400 to-indigo-400 h-1.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-brands fa-html5 text-2xl text-orange-500"></i>
+                            <h3 class="font-medium text-white">HTML & CSS</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">85%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-orange-500 to-rose-500 h-1.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-xl p-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <i class="fa-brands fa-js text-2xl text-yellow-400"></i>
+                            <h3 class="font-medium text-white">JavaScript</h3>
+                        </div>
+                        <span class="text-xs text-slate-400">70%</span>
+                    </div>
+                    <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                        <div class="bg-gradient-to-r from-yellow-400 to-amber-400 h-1.5 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="glass-card rounded-xl p-5 flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-slate-800 text-slate-300"><i class="fa-solid fa-server"></i></div>
+                    <div>
+                        <h4 class="font-medium text-white">Database Management Systems (DBMS)</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">Relational architectures, optimization techniques, and structural design schemas.</p>
+                    </div>
+                </div>
+                <div class="glass-card rounded-xl p-5 flex items-center space-x-4">
+                    <div class="p-3 rounded-lg bg-slate-800 text-slate-300"><i class="fa-solid fa-network-wired"></i></div>
+                    <div>
+                        <h4 class="font-medium text-white">Computer Networking Foundations</h4>
+                        <p class="text-xs text-slate-400 mt-0.5">Understanding system topologies, communication interfaces, and data transport layers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-semibold uppercase tracking-widest text-accent">Portfolio Showcase</h2>
+                <p class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-2">Analytical Implementations & Case Studies</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-slate-800 overflow-hidden">
+                        <img src="dashboard.png" alt="Ecommerce Sales Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                            <a href="https://public.tableau.com/app/profile/kailash.suthar/viz/ECOMMERCESALESDASHBOARD_17785621490540/E-COMMERCESALESDASHBOARD" target="_blank" class="p-3 rounded-full bg-accent text-white hover:bg-[#d90043] transition-colors"><i class="fa-solid fa-link"></i></a>
+                            <a href="https://github.com/KailashSuthar1315/E-Commerce-Sales-Dashboard" target="_blank" class="p-3 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Tableau</span>
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">KPI Dashboards</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Ecommerce Sales Dashboard</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                An interactive visual suite engineered within Tableau to synthesize and display consumer purchasing trends, core metrics, and quarterly performance targets.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 pt-6 border-t border-slate-800/60 mt-6">
+                            <a href="https://github.com/KailashSuthar1315/E-Commerce-Sales-Dashboard" target="_blank" class="inline-flex items-center text-xs font-semibold text-accent hover:underline"><i class="fa-brands fa-github mr-1.5"></i> Source Code</a>
+                            <a href="https://public.tableau.com/app/profile/kailash.suthar/viz/ECOMMERCESALESDASHBOARD_17785621490540/E-COMMERCESALESDASHBOARD" target="_blank" class="inline-flex items-center text-xs font-semibold text-white hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-slate-800 overflow-hidden">
+                        <img src="sales.png" alt="Sales Data Analysis" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                            <a href="http://localhost:8888/notebooks/Documents/Sales-Data-Analysis/SalesAnalysis/Analysis.ipynb?" class="p-3 rounded-full bg-accent text-white hover:bg-[#d90043] transition-colors"><i class="fa-solid fa-link"></i></a>
+                            <a href="https://github.com/KailashSuthar1315/Sales-Data-Analysis"  class="p-3 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Python</span>
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Pandas</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Sales Data Analysis</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                A processing script built with Python to parse structured commercial tables, clean discrepancies, and aggregate operational metrics.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 pt-6 border-t border-slate-800/60 mt-6">
+                            <a href="https://github.com/KailashSuthar1315/Sales-Data-Analysis" class="inline-flex items-center text-xs font-semibold text-accent hover:underline"><i class="fa-brands fa-github mr-1.5"></i> Source Code</a>
+                            <a href="http://localhost:8888/notebooks/Documents/Sales-Data-Analysis/SalesAnalysis/Analysis.ipynb?" class="inline-flex items-center text-xs font-semibold text-white hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-slate-800 overflow-hidden">
+                        <img src="HRdashboard.png" alt="HR Analytics Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                            <a href="https://public.tableau.com/app/profile/kailash.suthar/viz/Book1_17777916774450/HRAnalysticsDashboard?publish=yes" class="p-3 rounded-full bg-accent text-white hover:bg-[#d90043] transition-colors"><i class="fa-solid fa-link"></i></a>
+                            <a href="https://github.com/KailashSuthar1315/HR-Analytics-Dashboard" class="p-3 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Tableau</span>
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">KPI Dashboard</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">HR Analytics Dashboard</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                A business intelligence dashboard designed to monitor workforce demographics, track attrition patterns, and evaluate core employee performance indicators.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 pt-6 border-t border-slate-800/60 mt-6">
+                            <a href="https://github.com/KailashSuthar1315/HR-Analytics-Dashboard" target="_blank" class="inline-flex items-center text-xs font-semibold text-accent hover:underline"><i class="fa-brands fa-github mr-1.5"></i> Source Code</a>
+                            <a href="https://public.tableau.com/app/profile/kailash.suthar/viz/Book1_17777916774450/HRAnalysticsDashboard?publish=yes" target="_blank" class="inline-flex items-center text-xs font-semibold text-white hover:underline"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i> Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card rounded-2xl overflow-hidden flex flex-col group">
+                    <div class="relative aspect-video bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center border-b border-slate-800 overflow-hidden">
+                        <img src="chatinterface.png" alt="MediGPT Medical Assistant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                            <a href="https://github.com/KailashSuthar1315/MediGPT" target="_blank" class="p-3 rounded-full bg-slate-800 text-white hover:bg-slate-700 transition-colors"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div class="space-y-3">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Spring Boot</span>
+                                <span class="inline-flex items-center rounded-md bg-slate-800 px-2 py-0.5 text-xs font-medium text-slate-400">Ollama / LLM</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">MediGPT</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                A domain-specific medical assistant chatbot engineered with a 3-tier architecture, utilizing Spring Boot backend and local Large Language Models (LLMs) via Ollama.
+                            </p>
+                        </div>
+                        <div class="flex gap-4 pt-6 border-t border-slate-800/60 mt-6">
+                            <a href="https://github.com/KailashSuthar1315/MediGPT" class="inline-flex items-center text-xs font-semibold text-accent hover:underline"><i class="fa-brands fa-github mr-1.5"></i> Source Code</a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-24 bg-slate-900/10">
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <h3 class="text-3xl font-bold text-white mb-12 text-center flex items-center justify-center">
+                <i class="fa-solid fa-timeline text-accent mr-3"></i> Professional Journey & Milestones
+            </h3>
+            
+            <div class="relative border-l border-slate-800 pl-8 ml-4 space-y-12">
+                
+                <div class="relative glass-card p-6 rounded-xl border border-slate-800/60">
+                    <div class="absolute -left-[45px] top-7 bg-accent h-5 w-5 rounded-full border-4 border-[#0f172a] shadow-lg shadow-accent/20"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="inline-flex items-center rounded-md bg-rose-500/10 px-2.5 py-0.5 text-xs font-medium text-rose-400 ring-1 ring-inset ring-rose-500/20">Professional Experience</span>
+                        <span class="text-xs font-semibold text-slate-400"><i class="fa-regular fa-calendar mr-1.5"></i> 1 Month Duration</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">Data Architecture Intern</h4>
+                    <p class="text-md text-accent font-medium mt-0.5">Oasis Infobyte</p>
+                    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+                        Maintained data workflows and structures, engineered web application interfaces, and managed transactional databases to ensure integrity.
+                    </p>
+                </div>
+
+                <div class="relative glass-card p-6 rounded-xl border border-slate-800/60">
+                    <div class="absolute -left-[45px] top-7 bg-cyan-500 h-5 w-5 rounded-full border-4 border-[#0f172a] shadow-lg shadow-cyan-500/20"></div>
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <span class="inline-flex items-center rounded-md bg-cyan-500/10 px-2.5 py-0.5 text-xs font-medium text-cyan-400 ring-1 ring-inset ring-cyan-500/20">Certification</span>
+                        <span class="text-xs font-semibold text-slate-400"><i class="fa-solid fa-shield-check mr-1.5"></i> Verified Qualification</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white">RS-CIT Certification</h4>
+                    <p class="text-md text-cyan-400 font-medium mt-0.5">Information Technology Frameworks</p>
+                    <p class="text-sm text-slate-400 mt-3 leading-relaxed">
+                        Evaluated and verified proficiency in core computing concepts, operational systems, framework architectures, and fundamental information technology tools.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-base font-semibold uppercase tracking-widest text-accent">Contact Channels</h2>
+                <p class="text-3xl font-bold tracking-tight text-white sm:text-4xl mt-2">Initiate Professional Engagement</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+                <div class="lg:col-span-5 flex flex-col justify-between space-y-6">
+                    <div class="glass-card rounded-2xl p-6 space-y-6 flex-1 flex flex-col justify-center">
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-slate-800 text-accent rounded-xl text-xl"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Email Address</h4>
+                                <a href="mailto:sutharkailash@gmail.com" class="text-white hover:text-accent font-medium transition-colors">sutharkailash@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-slate-800 text-cyan-400 rounded-xl text-xl"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Contact Number</h4>
+                                <p class="text-white font-medium">+91 8764535257</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="p-3 bg-slate-800 text-emerald-400 rounded-xl text-xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Operational Base</h4>
+                                <p class="text-white font-medium">Rajasthan, India</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-6 text-center space-y-4">
+                        <p class="text-sm text-slate-400">Download My CV</p>
+                        <a href="ResumeKailash.pdf" download="ResumeKailash.pdf" class="inline-flex w-full items-center justify-center rounded-md bg-slate-800 border border-slate-700 py-2.5 text-sm font-semibold text-white hover:bg-slate-700 transition-colors duration-300"><i class="fa-solid fa-file-pdf mr-2"></i> Download CV</a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 sm:p-8">
+                    <form action="https://formspree.io/f/xdabjpkd" method="POST" class="space-y-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+            <label for="name" class="block text-xs font-medium uppercase tracking-wider text-slate-400">Full Name</label>
+            <input type="text" name="name" id="name" required class="mt-1 block w-full rounded-md bg-slate-900/60 border border-slate-800 px-4 py-2.5 text-sm text-white shadow-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors">
+        </div>
+        <div>
+            <label for="email" class="block text-xs font-medium uppercase tracking-wider text-slate-400">Email Address</label>
+            <input type="email" name="_replyto" id="email" required class="mt-1 block w-full rounded-md bg-slate-900/60 border border-slate-800 px-4 py-2.5 text-sm text-white shadow-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors">
+        </div>
+    </div>
+    <div>
+        <label for="subject" class="block text-xs font-medium uppercase tracking-wider text-slate-400">Message Subject</label>
+        <input type="text" name="subject" id="subject" required class="mt-1 block w-full rounded-md bg-slate-900/60 border border-slate-800 px-4 py-2.5 text-sm text-white shadow-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors">
+    </div>
+    <div>
+        <label for="message" class="block text-xs font-medium uppercase tracking-wider text-slate-400">Message Content</label>
+        <textarea name="message" id="message" rows="4" required class="mt-1 block w-full rounded-md bg-slate-900/60 border border-slate-800 px-4 py-2.5 text-sm text-white shadow-sm focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors resize-none"></textarea>
+    </div>
+    <button type="submit" class="inline-flex w-full items-center justify-center rounded-md bg-accent px-4 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#d90043] focus:outline-none transition-colors duration-300">Transmit Secure Message</button>
+</form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-900 bg-slate-950/60 backdrop-blur-md py-12 text-center text-sm text-slate-500">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex justify-center space-x-6 text-slate-400 text-lg">
+                <a href="https://github.com/KailashSuthar1315" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kailash-suthar-40aa752a4/" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/kailashsharma_15/?hl=en" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs font-medium tracking-wide uppercase">
+                <a href="#home" class="hover:text-slate-300 transition-colors">Home</a>
+                <a href="#about" class="hover:text-slate-300 transition-colors">About</a>
+                <a href="#skills" class="hover:text-slate-300 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-slate-300 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-slate-300 transition-colors">Contact</a>
+            </div>
+            <p class="text-xs">&copy; 2026 Kailash Suthar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('preloader');
+            loader.classList.add('opacity-0');
+            setTimeout(() => loader.remove(), 500);
+            startCounters();
+        });
+
+        // Mobile Dropdown Engine
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-xmark');
+        });
+
+        // Close dropdown when mobile links are clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-xmark');
+            });
+        });
+
+        // Typing Effect Engine
+        const words = ["Aspiring Data Analyst", "Python Developer", "SQL Specialist", "Tableau Designer"];
+        let wordIdx = 0, charIdx = 0, isDeleting = false;
+        const targetElement = document.getElementById('typing-text');
+
+        function typeEffect() {
+            const currentWord = words[wordIdx];
+            if (isDeleting) {
+                targetElement.textContent = currentWord.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                targetElement.textContent = currentWord.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            let speed = isDeleting ? 40 : 80;
+            if (!isDeleting && charIdx === currentWord.length) {
+                speed = 2000; // Hold at full string completion
+                isDeleting = true;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                wordIdx = (wordIdx + 1) % words.length;
+                speed = 300;
+            }
+            setTimeout(typeEffect, speed);
+        }
+        document.addEventListener('DOMContentLoaded', () => setTimeout(typeEffect, 500));
+
+        // Animated Statistics Counters Logic
+        function startCounters() {
+            const counters = document.querySelectorAll('[data-target]');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                let count = 0;
+                const speed = 2000 / target;
+                const updateCount = () => {
+                    if (count < target) {
+                        count++;
+                        counter.textContent = count;
+                        setTimeout(updateCount, speed);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Scroll to Top UI Display
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.remove('hidden');
+            } else {
+                scrollTopBtn.classList.add('hidden');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Active Navigation Tracker via Intersection Observer API
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const options = { threshold: 0.3, rootMargin: "0px 0px -20% 0px" };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('text-white', 'after:w-full');
+                            link.classList.remove('text-slate-300', 'after:w-0');
+                        } else {
+                            link.classList.remove('text-white', 'after:w-full');
+                            link.classList.add('text-slate-300', 'after:w-0');
+                        }
+                    });
+                }
+            });
+        }, options);
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
